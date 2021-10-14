@@ -16,7 +16,7 @@
     <el-form-item>
       <el-button type="primary" class="submit-btn" @click="handleLogin('loginForm')">登录</el-button>
       <div class="tiparea">
-          <p>忘记密码？ <a>立即找回</a></p>
+          <p>忘记密码？ <a @click.prevent="handleForgot">立即找回</a></p>
       </div>
     </el-form-item>
   </el-form>
@@ -68,7 +68,11 @@ export default {
             })
         }
 
-        return { handleLogin }
+        const handleForgot = () => {
+          router.push("/forgotpassword");
+        }
+
+        return { handleLogin, handleForgot }
     }
 };
 </script>
@@ -92,6 +96,7 @@ export default {
 }
 .tiparea p a {
   color: #409eff;
+  cursor: pointer;
 }
 
 </style>

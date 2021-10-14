@@ -13,6 +13,16 @@ const routes = [
     component: () => import( '../views/LoginRegister.vue')
   },
   {
+    path: '/forgotpassword',
+    name: 'ForgotPassword',
+    component: () => import( '../views/ForgotPassword.vue')
+  },
+  {
+    path: '/resetpassword/:id',
+    name: 'ResetPassword',
+    component: () => import( '../views/ResetPassword.vue')
+  },
+  {
     path: '/:catchAll(.*)',
     name: '/404',
     component: () => import( '../views/404.vue')
